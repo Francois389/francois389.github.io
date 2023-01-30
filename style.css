@@ -2,18 +2,12 @@ html {
     font-size: 12px;
 }
 
-p {
-    font-size: 1.25rem;
-    line-height: 1.5;
-    color: #212529;
-    padding-bottom: 10px;
+select, label{
+    font-size: 3rem !important;
 }
 
-li {
-    font-size: 1.5rem;
-    line-height: 1.5;
-    color: #212529;
-    padding-bottom: 10px;
+option {
+    font-size: 2rem !important;
 }
 
 .container {
@@ -38,7 +32,6 @@ li {
     animation-fill-mode: forwards;
     
 }
-
 
 @keyframes slide-in {
     from {

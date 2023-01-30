@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-12 cell text-center">
+            <div class="col-12 cell text-center glissade">
                 <div class="btn btn-primary m-3" id="HohoSound">Clique</div>
             </div>
         </div>
@@ -18,15 +18,16 @@
             <div class="col-12 cell text-center">
                 <form>
                     <!--liste d'effet possible-->
+                    <label for="selectionEffet">Effet : </label>
                     <select name="effet" id="selectionEffet">
-                        <option value="normal" selected disabled>Selectionner un effet</option>
-                        <option value="reverberation">Réverberation</option>
+                        <option value="normal" selected disabled>Selection d'un effet</option>
+                        <option value="reverberation">Reverberation</option>
                         <option value="reverse"      >Reverse</option>
                         <option value="aigu"         >Aigu</option>
                         <option value="distortion"   >Distortion</option>
                         <option value="grave"        >Grave</option>
                         <option value="normal"       >Normal</option>
-
+                    </select>
                 </form>
             </div>
         </div>
