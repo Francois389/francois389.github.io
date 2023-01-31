@@ -21,6 +21,40 @@ option {
     border-radius: 0.3rem;
 }
 
+.milieu{
+    padding-top: 5%; ;
+}
+
+.switch {
+    position: relative;
+    width: 60px;
+    height: 34px;
+    border-radius: 20px;
+    background-color: white;
+    border: 1px solid #000000;
+    padding: 1rem;
+}
+
+.switchOn{
+    background-color: #007afd;
+}
+
+.switchOn > #boutonSwitch {
+    left: 27px;
+}
+
+#boutonSwitch{
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #acb4bc;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    transition: 0.4s;
+}
+
+
 #HohoSound {
     font-size: 5rem;
     border-radius: 5%;
