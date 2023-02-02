@@ -45,7 +45,6 @@ document.addEventListener('DOMContentLoaded', function() {  // Attente que le DO
 
     // On ajoute un écouteur d'événement sur le bouton
     btn.addEventListener("click", function() {
-        console.log("Principale Boucle : " + HohoLoop)
         HohoAJouer.pause()
         if (!sonSuplementaire) {
             sonSuplementaire = true;
@@ -80,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {  // Attente que le DO
             break;
         }
         HohoAJouer.loop = HohoLoop;
-        console.log("Btn Boucle : " + HohoAJouer.loop);
+        console.log("Son bouclé : " + HohoAJouer.loop);
         HohoAJouer.play().then(() => console.log("Son joué"));
 
     });
@@ -98,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {  // Attente que le DO
         }
         divLoop.classList.toggle("switchOn");
 
-        console.log("Switch Boucle : " + HohoLoop)
+        console.log("Switch cliqué. Son bouclé : " + HohoLoop)
     });
 
 }); // Fin de l'attente que le DOM soit prêt

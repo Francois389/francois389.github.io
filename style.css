@@ -2,14 +2,6 @@ html {
     font-size: 12px;
 }
 
-select, label{
-    font-size: 3rem !important;
-}
-
-option {
-    font-size: 2rem !important;
-}
-
 .container {
     padding-top: 2%;
 }
@@ -21,38 +13,6 @@ option {
     border-radius: 0.3rem;
 }
 
-.milieu{
-    padding-top: 5%; ;
-}
-
-.switch {
-    position: relative;
-    width: 60px;
-    height: 34px;
-    border-radius: 20px;
-    background-color: white;
-    border: 1px solid #000000;
-    padding: 1rem;
-}
-
-.switchOn{
-    background-color: #007afd;
-}
-
-.switchOn > #boutonSwitch {
-    left: 27px;
-}
-
-#boutonSwitch{
-    width: 30px;
-    height: 30px;
-    border-radius: 15px;
-    background-color: #acb4bc;
-    position: absolute;
-    top: 1px;
-    left: 1px;
-    transition: 0.4s;
-}
 
 
 #HohoSound {
@@ -73,5 +33,104 @@ option {
     }
     to {
         transform: translateY(0);
+    }
+}
+
+/* ///////////////Petite taille d'écran////////////////////// */
+/* Si l'écran est de taille sm ou md */
+@media (max-width: 768px) {
+    select, label{
+        font-size: 1.75rem !important;
+
+    }
+
+    option {
+        font-size: 1.5rem !important;
+
+    }
+
+    /*TODO trouver un meilleur identificateur*/
+    .milieu{
+        position : relative;
+        top: 10%;
+        padding: 0 0 0 5px !important;
+    }
+
+    #textSwitch{
+        padding: 0;
+    }
+
+    .switch {
+        top: 10%;
+        position: relative;
+        width: 40px;
+        height: 15px;
+        border-radius: 20px;
+        background-color: white;
+        border: 1px solid #000000;
+        padding: 1rem;
+    }
+
+    #boutonSwitch{
+        width: 55%;
+        height: 90%;
+        border-radius: 100%;
+        background-color: #acb4bc;
+        position: absolute;
+        top: 1px;
+        left: 1px;
+        transition: 0.4s;
+    }
+
+    /* Quand on clique sur le switch la class switchOn est ajouté au switch*/
+    .switchOn{
+        background-color: #007afd;
+    }
+    .switchOn > #boutonSwitch {
+        left: 42%;
+    }
+}
+/* ///////////////Grande taille d'écran////////////////////// */
+/* Si l'écran a une taille supérieur a md */
+@media (min-width: 768px) {
+    select, label{
+        font-size: 3rem !important;
+    }
+
+    option {
+        font-size: 3rem !important;
+    }
+
+    .milieu{
+        padding-top: 5%;
+    }
+
+    .switch {
+        position: relative;
+        width: 60px;
+        height: 34px;
+        border-radius: 20px;
+        background-color: white;
+        border: 1px solid #000000;
+        padding: 1rem;
+    }
+
+    .switchOn{
+        background-color: #007afd;
+    }
+
+    .switchOn > #boutonSwitch {
+        left: 27px;
+    }
+
+    #boutonSwitch{
+        width: 30px;
+        height: 30px;
+        border-radius: 15px;
+        background-color: #acb4bc;
+        position: absolute;
+        top: 1px;
+        left: 1px;
+        transition: 0.4s;
     }
 }

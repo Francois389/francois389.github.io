@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Accueil</title>
     <link href="style.css" rel="stylesheet">
-    <!--Import font awesome from internet
-    <link rel="stylesheet" src="../fontawesome-free-6.0.0-beta2-web/css/all.css" crossorigin="anonymous" >-->
+    <!--Import font awesome from internet-->
+    <link rel="stylesheet" src="../fontawesome-free-6.0.0-beta2-web/css/all.css" crossorigin="anonymous" >
     <!--Import Bootstrap from internet-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
@@ -23,9 +23,10 @@
 <!--                        &lt;!&ndash;Bouton pour le volume&ndash;&gt;-->
 <!--                        <div class="btn btn-primary m-3" id="boutonVolume"><span class="fa-solid fa-volume-high"></span></div>-->
 <!--                    </div>-->
+                    <!--Liste d'effet possible-->
                     <div class="col-8">
                         <form>
-                            <!--Liste d'effet possible-->
+
                             <label for="selectionEffet">Effet : </label>
                             <select name="effet" id="selectionEffet">
                                 <option value="normal" selected disabled>Selection d'un effet</option>
@@ -37,23 +38,21 @@
                                 <option value="normal"       >Normal</option>
                             </select>
                         </form>
-                    </div>
+                    </div> <!--Fin de la liste d'effet possible-->
+
+                    <!--Switch pour faire boucler le son -->
                     <div class="col-4">
                         <div class="row">
-                            <div class="col-8">
-                                <label for="switch">En boucle :</label>
+                            <div class="col-8" id="textSwitch">
+                                <label for="divSwitch">En boucle :</label>
                             </div>
                             <div class="col-4 milieu">
                                 <div class="switch" id="divSwitch">
                                     <div class="" id="boutonSwitch"></div>
                                 </div>
                             </div>
-
-
                         </div>
-                        <!--Switch pour faire boucler le son -->
-
-                    </div>
+                    </div> <!--Fin du switch pour faire boucler le son -->
                 </div>
             </div>
 
