@@ -21,34 +21,55 @@ document.addEventListener('DOMContentLoaded', function() {  // Attente que le DO
     
     console.log("Je démarre le code js");
 
+    // Variables globales
     let sonSuplementaire = false;
     let effetSelectionne = "normal";
     let HohoAJouer = new Audio('sound/Hoho.mp3');
-    let HohoLoop = false;
+    let sonBoucle = false;
 
     // On récupère les éléments du DOM
     const btn = document.getElementById("HohoSound");
-
-    //Bouton volume
-    const btnVolume = document.getElementById("boutonVolume");
-
-    //Liste effet
-    const divEffet = document.getElementById("divEffet");
+    //Les effets
     const selectionEffet = document.getElementById("selectionEffet");
+    const divEffet = document.getElementById("liste");
+    //Le switch
+    const divLoop = document.getElementById("switch");
+    const switchBoucle = document.getElementById("switchBoucleMusique");
+    //Le choix du volume
+    const divVolume = document.getElementById("volume");
+    const sliderVolume = document.getElementById("niveauVolume");
 
-    //Switch
-    const btnLoop = document.getElementById("switchBoucleMusique");
-    const divLoop = document.getElementById("divSwitch");
+    // Ecouteurs d'événements
+    btn.addEventListener("click", jouerSon );
+    selectionEffet.addEventListener("change", updateEffetSelection);
+    switchBoucle.addEventListener("click", toggleBoucleSon);
+    sliderVolume.addEventListener("input", updateVolume);
 
-    cacherElt(divEffet);
+    function toggleBoucleSon() {
+        if (!sonBoucle) {
+            sonBoucle = true;
+        } else {
+            sonBoucle = false;
+            HohoAJouer.pause();
+        }
+        console.log("Switch cliqué. Son bouclé : " + sonBoucle)
+    }
 
+    function updateEffetSelection() {
+        effetSelectionne = selectionEffet.value;
+    }
 
-    // On ajoute un écouteur d'événement sur le bouton
-    btn.addEventListener("click", function() {
+    function updateVolume() {
+        HohoAJouer.volume = sliderVolume.value;
+    }
+
+    function jouerSon() {
         HohoAJouer.pause()
         if (!sonSuplementaire) {
             sonSuplementaire = true;
             afficherElt(divEffet);
+            afficherElt(divVolume);
+            afficherElt(divLoop);
         }
         /* sélectionne le bon fichier correspondant à l'effet choisi parmi :
            - reverberation
@@ -59,45 +80,36 @@ document.addEventListener('DOMContentLoaded', function() {  // Attente que le DO
            - normal
          */
         switch (effetSelectionne) {
-        case "normal":
-            HohoAJouer = new Audio('sound/Hoho.mp3');
-            break;
-        case "reverberation":
-            HohoAJouer = new Audio('sound/HohoReverb.mp3');
-            break;
-        case "reverse":
-            HohoAJouer = new Audio('sound/HohoReverse.mp3');
-            break;
-        case "aigu":
-            HohoAJouer = new Audio('sound/HohoAigu.mp3');
-            break;
-        case "distortion":
-            HohoAJouer = new Audio('sound/HohoDistortion.mp3');
-            break;
-        case "grave":
-            HohoAJouer = new Audio('sound/HohoGrave.mp3');
-            break;
+            case "normal":
+                HohoAJouer.src = "sound/Hoho.mp3";
+                break;
+            case "reverberation":
+                HohoAJouer.src = "sound/HohoReverb.mp3";
+                break;
+            case "reverse":
+                HohoAJouer.src = "sound/HohoReverse.mp3";
+                break;
+            case "aigu":
+                HohoAJouer.src = "sound/HohoAigu.mp3";
+                break;
+            case "distortion":
+                HohoAJouer.src = "sound/HohoDistortion.mp3";
+                break;
+            case "grave":
+
+                HohoAJouer = new Audio('sound/HohoGrave.mp3');
+                break;
         }
-        HohoAJouer.loop = HohoLoop;
+        console.log("Src : " + HohoAJouer.src + " Volume : " + HohoAJouer.volume)
+        HohoAJouer.loop = sonBoucle;
         console.log("Son bouclé : " + HohoAJouer.loop);
-        HohoAJouer.play().then(() => console.log("Son joué"));
+        HohoAJouer.play().then(() => console.log("Son joué : " + effetSelectionne));
+    }
 
-    });
-
-    selectionEffet.addEventListener("change", function() {
-        effetSelectionne = selectionEffet.value;
-    });
-
-    divLoop.addEventListener("click", function() {
-        if (!HohoLoop) {
-            HohoLoop = true;
-        } else {
-            HohoLoop = false;
-            HohoAJouer.pause();
-        }
-        divLoop.classList.toggle("switchOn");
-
-        console.log("Switch cliqué. Son bouclé : " + HohoLoop)
-    });
+    //Initialisation
+    cacherElt(divEffet);
+    cacherElt(divVolume);
+    cacherElt(divLoop);
+    HohoAJouer.volume = sliderVolume.value;
 
 }); // Fin de l'attente que le DOM soit prêt

@@ -8,12 +8,18 @@ html {
 
 .cell {
     padding: 1rem 1rem;
-    margin-bottom: 2rem;
+    margin: 0 1rem 2rem 1rem;
     background-color: #e9ecef;
     border-radius: 0.3rem;
 }
 
+#switch > div > * {
+    font-size: 2rem;
+}
 
+#volume > div > * {
+    font-size: 2rem;
+}
 
 #HohoSound {
     font-size: 5rem;
