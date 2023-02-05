@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {  // Attente que le DO
     const selectionEffet = document.getElementById("selectionEffet");
 
     //Switch
-    const btnLoop = document.getElementById("boutonSwitch");
+    const btnLoop = document.getElementById("switchBoucleMusique");
     const divLoop = document.getElementById("divSwitch");
 
     cacherElt(divEffet);
